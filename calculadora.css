@@ -19,11 +19,21 @@ h1 {
   box-shadow: 4px 4px 4px #3d3e42;  
 }
 .screen {
+  height: 100px;
+  padding: 10px;
   text-align: right;
   user-select: none;
-  line-height: 10px;
-  font-size: 60px;
+  font-size: 3rem;
+  overflow-wrap: break-word; /* permite romper palabras largas */
+  word-break: break-all;     /* fuerza el quiebre si no cabe */
+  overflow-y: auto;          /* activa scroll si crece mucho */
+  white-space: normal;       /* permite múltiples líneas */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  line-height: 1.2;
 }
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 70px);

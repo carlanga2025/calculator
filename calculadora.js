@@ -6,11 +6,25 @@ let currentInput = "0";
 let previousInput = "";
 let operator = null;
 
+
 // Función para actualizar la pantalla
 function updateScreen(value) {
+  const length = value.toString().length;
+  if (length >= 61) return alert("Número demasiado largo");
   screen.textContent = value;
-}
 
+
+  // Escala el tamaño de fuente dinámicamente si es muy largo
+  if (length >= 10 && length < 15) {
+    screen.style.fontSize = "2rem";
+  } else if (length >= 15 && length < 20) {
+    screen.style.fontSize = "2rem";
+  } else if (length >= 20) {
+    screen.style.fontSize = "1.5rem";
+  } else {
+    screen.style.fontSize = "3rem"; // tamaño original
+  }
+}
 // Función para manejar los clics de los botones
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
